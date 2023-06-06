@@ -9,9 +9,7 @@ connectDb();
 const app = express();
 
 app.use(
-    cors({
-        origin : "https://memory-client-citcovcty-bholubha.vercel.app/",
-    })
+    cors()
 )
 
 app.use(bodyParser.json({ limit: '50mb' }));
