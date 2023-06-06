@@ -10,7 +10,7 @@ const app = express();
 
 app.use(
     cors({
-   origin : "https://memory-client-six.vercel.app"
+   origin : "https://memory-client-taupe.vercel.app"
     })
 );
 
