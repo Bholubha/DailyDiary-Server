@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 
 
-const port = process.env.PORT;
+const port = "https://memory-server-five.vercel.app";
 
 app.use("/user",require("./routes/User"));
 app.use('/memory',require("./routes/Memory"));
