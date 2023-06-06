@@ -3,6 +3,7 @@ const User = require('../models/userModel');
 
 
 
+
 const registerUser   = asyncHandler(async (req,res)=>{
    const {username , password} = req.body;
    if(!username || !password){
