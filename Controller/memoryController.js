@@ -3,7 +3,7 @@ const Post = require("../models/postModel");
 
 const getPost = asyncHandler(async (req,res)=>{
 
-    const {username} = req.body;
+    const username = req.body.username;
    
     const post = await  Post.find({username});
      
