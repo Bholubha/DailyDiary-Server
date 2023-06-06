@@ -32,3 +32,6 @@ app.get("/",(req,res) =>{
     res.send("HEllo World");
 })
 
+app.get("/user/login",(req,res)=>{
+    res.send("in login");
+})
