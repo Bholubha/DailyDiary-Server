@@ -26,3 +26,7 @@ app.listen(port,()=>{
     console.log(`i am listening on port ${port}`)
 })
 
+app.get("/",(req,res) =>{
+    res.send("HEllo World");
+})
+
