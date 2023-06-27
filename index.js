@@ -8,30 +8,24 @@ connectDb();
 
 const app = express();
 
-app.use(
-    cors({
-   origin : "https://memory-client-taupe.vercel.app"
-    })
-);
+// app.use(
+//     cors({
+//    origin : "http://localhost:3000"
+//     })
+// );
 
+app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 
 
 
-const port = 8000;
+//const port = process.env.PORT;
 
 app.use("/user",require("./routes/User"));
 app.use('/memory',require("./routes/Memory"));
-app.listen(port,()=>{
-    console.log(`i am listening on port ${port}`)
-})
+// app.listen(port,()=>{
+//     console.log(`i am listening on port ${port}`)
+// })
 
-app.get("/",(req,res) =>{
-    res.send("HEllo World");
-})
-
-app.get("/user/login",(req,res)=>{
-    res.send("in login");
-})

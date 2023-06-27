@@ -4,10 +4,11 @@ const Post = require("../models/postModel");
 const getPost = asyncHandler(async (req,res)=>{
 
     const username = req.body.username;
-   
+    console.log(username)
     const post = await  Post.find({username});
      
  if(post){
+    console.log(post)
     res.json({
         img : post,
     })
