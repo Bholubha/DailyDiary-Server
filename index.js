@@ -28,4 +28,7 @@ app.use('/memory',require("./routes/Memory"));
 // app.listen(port,()=>{
 //     console.log(`i am listening on port ${port}`)
 // })
+app.use("/",(req,res)=>{
+    res.send("hello worlllll");
+})
 
