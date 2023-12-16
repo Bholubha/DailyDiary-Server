@@ -21,14 +21,12 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 
 
-//const port = process.env.PORT;
+const port = process.env.PORT;
 
 app.use("/user",require("./routes/User"));
 app.use('/memory',require("./routes/Memory"));
-// app.listen(port,()=>{
-//     console.log(`i am listening on port ${port}`)
-// })
-app.use("/",(req,res)=>{
-    res.send("hello worlllll");
+app.listen(port,()=>{
+    console.log(`i am listening on port ${port}`)
 })
+
 
