@@ -15,8 +15,8 @@ const app = express();
 // );
 
 var corsOptions = {
-    origin: "https://daily-diary-client.vercel.app/"
-  };
+    origin: "https://daily-diary-client.vercel.app"
+  };    
   
 app.use(cors(corsOptions));
 
