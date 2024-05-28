@@ -8,17 +8,17 @@ connectDb();
 
 const app = express();
 
-app.use(
-    cors({
-   origin : "http://localhost:3000"
-    })
-);
+// app.use(
+//     cors({
+//    origin : "http://localhost:3000"
+//     })
+// );
 
-// var corsOptions = {
-//     origin: "http://localhost:3000"
-//   };
+var corsOptions = {
+    origin: "http://localhost:3000"
+  };
   
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json({ limit: '500mb' }));
 app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
 
 
 const port = process.env.PORT;
+app.use('/',index);
 
 app.use("/user",require("./routes/User"));
 app.use('/memory',require("./routes/Memory"));
