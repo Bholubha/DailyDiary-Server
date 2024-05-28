@@ -3,9 +3,9 @@ const Post = require("../models/postModel");
 
 const getPost = asyncHandler(async (req,res)=>{
 
-    const username = req.body.username;
-    console.log(username)
-    const post = await  Post.find({username});
+    const email = req.body.email;
+    console.log(email)
+    const post = await  Post.find({email});
      
  if(post){
     console.log(post)
@@ -20,19 +20,21 @@ const getPost = asyncHandler(async (req,res)=>{
 
 
 const createPost = asyncHandler(async (req,res)=>{
-    const {username,title ,description ,image} = req.body;
+    const {email,date,title ,IMG,description } = req.body;
  
     const post = await Post.create({
-      username,
-       image ,
-      title,
+      email,
+      date,
+       title ,
+      images:IMG,
       description
  });
  
  if(post){
+    console.log("data uploaded successfully")
      res.json({
-       img : post.image, 
-       uname : post.username,
+       img : post.images, 
+       email : post.email,  
        title : post.title
      })
  }else{
