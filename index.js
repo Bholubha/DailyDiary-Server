@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
 
 
 const port = process.env.PORT;
-app.use('/',index);
+
 
 app.use("/user",require("./routes/User"));
 app.use('/memory',require("./routes/Memory"));
