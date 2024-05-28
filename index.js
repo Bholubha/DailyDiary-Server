@@ -8,16 +8,20 @@ connectDb();
 
 const app = express();
 
-// app.use(
-//     cors({
-//    origin : "http://localhost:3000"
-//     })
-// );
+app.use(
+    cors({
+   origin : "http://localhost:3000"
+    })
+);
 
-app.use(cors());
+// var corsOptions = {
+//     origin: "http://localhost:3000"
+//   };
+  
+// app.use(cors(corsOptions));
+
 app.use(bodyParser.json({ limit: '500mb' }));
 app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
-
 
 
 
