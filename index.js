@@ -14,11 +14,25 @@ const app = express();
 //     })
 // );
 
-var corsOptions = {
-    origin: "https://daily-diary-client.vercel.app"
-  };    
-  
+
+
+const allowedOrigins = [
+  'https://daily-diary-client.vercel.app',
+  'http://localhost:3000'
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
 app.use(cors(corsOptions));
+
 
 app.use(bodyParser.json({ limit: '500mb' }));
 app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
