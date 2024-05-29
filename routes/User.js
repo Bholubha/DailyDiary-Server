@@ -4,7 +4,6 @@ const {registerUser,loginUser,sendUsername,deleteUser} = require('../Controller/
 
 
 router.route("/register").post(registerUser)
-
 router.route("/login").post(loginUser);
 
 router.route("/senduser").post(sendUsername);
